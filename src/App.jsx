@@ -108,7 +108,9 @@ function Sidebar() {
         })}
       </nav>
       <div className="p-4 border-t border-gray-800 text-xs text-gray-600">
-        All tools run locally in your browser.
+        <div className="mb-2">All tools run locally in your browser.</div>
+        <NavLink to="/privacy" className="text-gray-500 hover:text-gray-300 transition-colors block mb-1">Privacy Policy</NavLink>
+        <NavLink to="/about" className="text-gray-500 hover:text-gray-300 transition-colors block">About</NavLink>
       </div>
     </aside>
   )
@@ -132,6 +134,8 @@ export default function App() {
         <Route path="/image" element={<ToolShell title="Image Compressor"><ImageCompressor /></ToolShell>} />
         <Route path="/diff" element={<ToolShell title="Text Diff Checker"><TextDiffChecker /></ToolShell>} />
         <Route path="/hash" element={<ToolShell title="Hash Generator"><HashGenerator /></ToolShell>} />
+        <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
     </div>
   )
@@ -144,6 +148,43 @@ function ToolShell({ title, children }) {
         <h1 className="text-lg font-semibold text-gray-100">{title}</h1>
       </div>
       <div className="flex-1 overflow-auto p-6">{children}</div>
+    </div>
+  )
+}
+
+function PrivacyPage() {
+  return (
+    <div className="flex-1 p-6 md:p-10 overflow-auto max-w-3xl">
+      <h1 className="text-2xl font-bold text-gray-100 mb-6">Privacy Policy</h1>
+      <div className="space-y-4 text-sm text-gray-300 leading-relaxed">
+        <p><strong className="text-gray-100">Last updated:</strong> July 30, 2026</p>
+        <h2 className="text-lg font-semibold text-gray-100 mt-6">Our Commitment to Privacy</h2>
+        <p>DevTool Station is designed with privacy as a core principle. <strong>All tools run entirely in your browser.</strong> Your data never leaves your device.</p>
+        <h2 className="text-lg font-semibold text-gray-100 mt-6">Data Collection</h2>
+        <p>We do <strong>not</strong> collect, store, or transmit any data you enter into our tools. No text, files, JSON, URLs, images, or any other content you process is ever sent to our servers or any third party.</p>
+        <h2 className="text-lg font-semibold text-gray-100 mt-6">Analytics & Advertising</h2>
+        <p>We may use Google Analytics to understand visitor traffic patterns and Google AdSense to display advertisements. These services may use cookies. No personally identifiable information is collected through these services.</p>
+        <h2 className="text-lg font-semibold text-gray-100 mt-6">Cookies</h2>
+        <p>Third-party services (Google Analytics, Google AdSense) may place cookies in your browser. You can disable cookies in your browser settings at any time.</p>
+        <h2 className="text-lg font-semibold text-gray-100 mt-6">Contact</h2>
+        <p>For privacy-related questions, please open an issue on our <a href="https://github.com/fx2329/toolstation" className="text-blue-400 hover:underline">GitHub repository</a>.</p>
+      </div>
+    </div>
+  )
+}
+
+function AboutPage() {
+  return (
+    <div className="flex-1 p-6 md:p-10 overflow-auto max-w-3xl">
+      <h1 className="text-2xl font-bold text-gray-100 mb-6">About DevTool Station</h1>
+      <div className="space-y-4 text-sm text-gray-300 leading-relaxed">
+        <p>DevTool Station is a collection of free online developer tools built with one principle: <strong>privacy first.</strong></p>
+        <p>Unlike many "free tool" websites that upload your data to unknown servers, every tool on DevTool Station runs entirely in your browser using Web APIs. Nothing you type, paste, or upload ever leaves your device.</p>
+        <h2 className="text-lg font-semibold text-gray-100 mt-6">Technology</h2>
+        <p>Built with React, Vite, and Tailwind CSS. All processing is done client-side using browser-native APIs. The source code is open source and available on <a href="https://github.com/fx2329/toolstation" className="text-blue-400 hover:underline">GitHub</a>.</p>
+        <h2 className="text-lg font-semibold text-gray-100 mt-6">Contact</h2>
+        <p>Have suggestions or found a bug? Open an issue on <a href="https://github.com/fx2329/toolstation" className="text-blue-400 hover:underline">GitHub</a>.</p>
+      </div>
     </div>
   )
 }
