@@ -39,6 +39,10 @@ function HomePage() {
     <div className="flex-1 p-6 md:p-10 overflow-auto">
       <h1 className="text-3xl font-bold text-gray-100 mb-2">DevTool Station</h1>
       <p className="text-gray-400 mb-10 text-sm">Free online developer tools — no signup, runs in your browser.</p>
+      <div className="mb-8">
+        <ins className="adsbygoogle" style={{display:"block"}} data-ad-client="ca-pub-5754174567008199" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script dangerouslySetInnerHTML={{__html:"(adsbygoogle = window.adsbygoogle || []).push({});"}} />
+      </div>
       {categories.map((cat) => {
         const catTools = tools.filter((t) => t.category === cat.key)
         if (catTools.length === 0) return null
@@ -111,6 +115,10 @@ function Sidebar() {
         <div className="mb-2">All tools run locally in your browser.</div>
         <NavLink to="/privacy" className="text-gray-500 hover:text-gray-300 transition-colors block mb-1">Privacy Policy</NavLink>
         <NavLink to="/about" className="text-gray-500 hover:text-gray-300 transition-colors block">About</NavLink>
+        <div className="mt-3">
+          <ins className="adsbygoogle" style={{display:"block",width:"100%",minHeight:"250px"}} data-ad-client="ca-pub-5754174567008199" data-ad-slot="2345678901" data-ad-format="auto"></ins>
+          <script dangerouslySetInnerHTML={{__html:"(adsbygoogle = window.adsbygoogle || []).push({});"}} />
+        </div>
       </div>
     </aside>
   )
@@ -147,7 +155,11 @@ function ToolShell({ title, children }) {
       <div className="px-6 py-4 border-b border-gray-800 bg-gray-900/50 shrink-0">
         <h1 className="text-lg font-semibold text-gray-100">{title}</h1>
       </div>
-      <div className="flex-1 overflow-auto p-6">{children}</div>
+      <div className="flex-1 overflow-auto p-6">
+        <ins className="adsbygoogle" style={{display:"block",marginBottom:"16px"}} data-ad-client="ca-pub-5754174567008199" data-ad-slot="3456789012" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script dangerouslySetInnerHTML={{__html:"(adsbygoogle = window.adsbygoogle || []).push({});"}} />
+        {children}
+      </div>
     </div>
   )
 }
